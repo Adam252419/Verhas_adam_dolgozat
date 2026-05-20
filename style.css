@@ -3,7 +3,7 @@
 }
 body {
   background-color: wheat;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   color: rgb(8, 8, 8);
   text-align: justify;
@@ -18,28 +18,76 @@ main {
   display: grid;
   grid-template-columns: 1fr 3fr 2fr;
   grid-template-areas:
-  "h h h"
-  "n ar a"
-  "f f f" ;
+    "h h h"
+    "n ar a"
+    "f f f";
 }
-header{
-    grid-area: h;
+header {
+  grid-area: h;
+  font-size: 40px;
 }
-nav{
-    grid-area: n;
+nav {
+  grid-area: n;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: rgb(240, 220, 190);
 }
-article{
-    padding: 10px;
-    grid-area: ar;
+nav li{
+    list-style-type: none;
+    text-align: center;
+    border-top: 5px;
+    border-bottom: 5px;
+    border-left: 10px;
+    border-right: 10px;
 }
-aside{
-    padding: 10px;
-    grid-area: a;
+article {
+  padding: 10px;
+  grid-area: ar;
 }
-footer{
-    grid-area: f;
+aside {
+  padding: 10px;
+  grid-area: a;
+  text-align: left;
 }
-h2{
-    border-bottom: 1px solid grey;
-    margin: 20px;
+footer {
+  grid-area: f;
+  text-align: center;
 }
+h2 {
+  border-bottom: 1px solid grey;
+  margin: 20px;
+}
+aside h3 {
+  font-style: italic;
+}
+img {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+div {
+  gap: 10px;
+}
+.kep {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "h "
+      "n "
+      "ar"
+      "a"
+      "f";
+    text-size-adjust: calc(10px + 2vw);
+  }
+  .kep {
+    grid-template-columns: 1fr;
+  }
+}
+
